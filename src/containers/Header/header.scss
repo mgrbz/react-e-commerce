@@ -1,0 +1,40 @@
+@import '../../index.scss';
+
+@mixin centers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header{
+  @include centers();
+  position: fixed;
+  top: 0;
+  width: 100%;
+  min-height: 80px;
+  max-height: 80px;
+  z-index: 999;
+  border-bottom: 1px solid $color3;
+  background-color: $color3;
+
+  .header-wrapper{
+    @include centers();
+    justify-content: space-between;
+    width: 90%;
+
+    .left-item{
+
+    }
+
+    .right-item{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      p{
+        // @include centers();
+      }
+    }
+  }
+
+}
