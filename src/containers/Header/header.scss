@@ -31,6 +31,22 @@
       justify-content: space-between;
       align-items: center;
       gap: 10px;
+
+      .icon-header{
+        position: relative;
+      }
+
+      .card-item-count{
+        background-color: orangered;
+        color: $color2;
+        border-radius: 50%;
+        position: absolute;
+        right: -10px;
+        top: -10px;
+        padding: 3px 6px;
+        font-size: 11px;
+      }
+      
       p{
         // @include centers();
       }

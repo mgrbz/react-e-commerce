@@ -9,8 +9,11 @@ import Brightness4Icon from '@mui/icons-material/Brightness4';
 
 import './header.scss';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-const Header = () => {
+const Header = (props) => {
+
+  console.log('header props', props);
 
   const [theme, setTheme] = useState('light');
 
@@ -22,7 +25,9 @@ const Header = () => {
     <div className='header'>
       <div className='header-wrapper'>
         <div className='left-item'>
+        <Link to='/'>
           <AllInclusiveIcon fontSize='large' />
+        </Link>
         </div>
         <div>
           <h4>React E-Commerce</h4>
@@ -32,7 +37,16 @@ const Header = () => {
             <AccountCircleOutlinedIcon fontSize='small' />
           </Link>
           <Link to='/card'>
-            <ShoppingCartOutlinedIcon fontSize='small' />
+            <p className='icon-header'>
+              <span className={` ${props.cards.length === 0 ? 'd-none' : ''} card-item-count`}>
+                {
+                  props.cards.length > 0 ? props.cards.length : ''
+                }
+              </span>
+              <span>
+                <ShoppingCartOutlinedIcon fontSize='small' />
+              </span>
+            </p>
           </Link>
           <span onClick={() => ChangeTheme()}>
             {
@@ -50,4 +64,14 @@ const Header = () => {
 }
 
 
-export default Header;
+const mapStateToProps = ({ RCard }) => {
+  return{
+    cards: RCard.card
+  }
+}
+
+const mapDispatchToProps = {
+
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

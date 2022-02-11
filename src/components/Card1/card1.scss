@@ -1,0 +1,60 @@
+@import '../../index.scss';
+
+.card1{
+  position: relative;
+  width: 300px;
+  height: 500px;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  flex-direction: column;
+  img{
+    width: 300px;
+  }
+
+  .card1-content{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+
+    .content1{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      .car1-title{
+        font-size: 18px;
+        font-weight: bold;
+      }
+      .card1-icons{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        color: $color3;
+      }
+    }
+
+    .content2{
+      .price{
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        gap: 10px;
+
+        font-weight: bold;
+        .new-price{
+          color: $color3;
+        }
+        .old-price{
+          color: #db5e0ae1;
+          text-decoration: line-through;
+        }
+      }
+    }
+  }
+
+
+}
