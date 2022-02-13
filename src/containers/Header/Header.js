@@ -21,6 +21,7 @@ const Header = (props) => {
 
   const ChangeTheme = () => {
     theme === 'light' ? setTheme('dark') : setTheme('light');
+    document.body.className = theme;
   }
   
   var ss = props.cards.length > 0 ? props.cards.map(card => cardCount += card.cardCount ) : 0;
