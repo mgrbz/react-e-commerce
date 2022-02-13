@@ -4,26 +4,28 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  padding: 10px;
+  font-size: 14px
 }
 
 .centerly-count-content{
   @include centeralize();
 
-  min-width: 20px;
-  min-height: 30px;
+  padding: 10px 15px;
   border: 1px solid $color3;
   border-radius: 5px;
 }
 
 .card-summary{
-
   @include centeralize();
+  align-items: flex-start;
   font-size: 12px;
-  flex-direction: column;
+  gap: 20px;
+
   .my-orders{
     @include centeralize();
     flex-direction: column;
-    min-width: 100%;
+    max-width: 60%;
     gap: 10px;
     
     .order{
@@ -57,9 +59,8 @@
       .order-count-content{
         @include centeralize();
         justify-content: center;
-
         .order-count{
-          min-width: 40px;
+          
         }
       }
 
@@ -84,17 +85,62 @@
 
   .order-confirm{
     @include centeralize();
-    justify-content: space-evenly;
-    align-items: flex-start;
+    justify-content: space-between;
+    align-items: flex-start !important;
     flex-direction: column;
-    min-width: 100%;
-
+    gap: 20px;
+    max-width: 40%;
+    box-shadow: 0 1px 4px 0 #0000000d;
+    border: solid 1px #e6e6e6;
+    border-radius: 10px;
+    padding-top: 35px !important;
     
-    .confirm-item{
+    .order-title{
+      width: 100%;
+      text-align: left;
+      padding-left: 15px;
+    }
+
+    .orders-item{
+      width: 100%;
+
+      .confirm-item{
+        @include centeralize();
+        justify-content: space-between;
+  
+      }
+
+    }
+
+    .price-summary{
       @include centeralize();
-      width: 90%;
+      justify-content: space-between;
+      border-top: 1px solid gray;
+      min-width: 90%;
+  
+      .payment-sell{
+        @include centeralize();
+        justify-content: space-between;
+        flex-direction: column;
+        border-radius: 10px;
+        padding: 10px 20px;
+        background-color: #fef0e2;
+        color: orangered;
+  
+        .payment-price-text{
+          color: $color1;
+        }
+      }
+  
+      .payment-price{
+        color: orangered;
+        font-size: 16px;
+
+      }
     }
   }
+
+
 
   .order-confirm{
     @include centeralize();
@@ -107,24 +153,55 @@
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 767px) {
 
-  .order{
-    gap: 10px;
-    .order-image{
 
-      img{
-        width: 50px !important;
-        height: 70px !important;
+  .card-summary{
+    flex-direction: column;
+    align-items: center;
+    .my-orders{
+      max-width: 100% !important;
+      min-width: 100% !important;
+      .order{
+        gap: 5px;
+    
+        .order-image{
+    
+          img{
+            width: 50px !important;
+            height: 70px !important;
+          }
+        }
+    
+        .order-info{
+          padding: 5px !important;
+        }
+    
+        .order-count-content{
+          flex-direction: column;
+          padding: 5px !important;
+    
+          .centerly-count-content{
+            min-width: 5px;
+            min-height: 5px;
+          }
+    
+          .order-count{
+            min-width: 5px !important;
+          }
+        }
+    
+        .order-price-content{
+          padding: 5px !important;
+        }
       }
     }
-
-    .order-count-content{
-      flex-direction: column;
-      .centerly-count-content{
-        min-width: 40px;
-        min-height: 20px;
-      }
+  
+    .order-confirm{
+      max-width: 70% !important;
+      min-width: 70% !important;
     }
+
   }
+
 }
 
 @media only screen and (max-width: 900px) {

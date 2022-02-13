@@ -44,7 +44,7 @@ const Header = (props) => {
             <p className='icon-header'>
               <span className={` ${props.cards.length === 0 ? 'd-none' : ''} card-item-count`}>
                 {
-                  props.cards.length > 0 ? props.cards.length : ''
+                  props.cards.length > 0 ? cardCount : ''
                 }
               </span>
               <span>
