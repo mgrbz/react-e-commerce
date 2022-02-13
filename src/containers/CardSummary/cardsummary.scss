@@ -1,0 +1,155 @@
+@import '../../index.scss';
+
+@mixin centeralize {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.centerly-count-content{
+  @include centeralize();
+
+  min-width: 20px;
+  min-height: 30px;
+  border: 1px solid $color3;
+  border-radius: 5px;
+}
+
+.card-summary{
+
+  @include centeralize();
+  font-size: 12px;
+  flex-direction: column;
+  .my-orders{
+    @include centeralize();
+    flex-direction: column;
+    min-width: 100%;
+    gap: 10px;
+    
+    .order{
+      @include centeralize();
+      width: 90%;
+      border: 1px solid $color3;
+      border-radius: 10px;
+      padding: 10px 15px;
+
+      .order-image{
+
+        img{
+          width: 75px;
+          height: 100px
+        }
+      }
+
+      .order-info{
+        @include centeralize();
+        align-items: flex-start;
+        flex-direction: column;
+        p{
+          text-align: left !important;
+        }
+
+        .order-sell-shop{
+          color: gray;
+        }
+      }
+
+      .order-count-content{
+        @include centeralize();
+        justify-content: center;
+
+        .order-count{
+          min-width: 40px;
+        }
+      }
+
+      .order-price-content{
+        @include centeralize();
+        flex-wrap: wrap;
+        flex-direction: column;
+        font-weight: bold;
+
+        .new-price{
+          color: $color3;
+          white-space: nowrap;
+        }
+        .old-price{
+          color: #db5e0ae1;
+          text-decoration: line-through;
+        }
+      }
+
+    }
+  }
+
+  .order-confirm{
+    @include centeralize();
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-direction: column;
+    min-width: 100%;
+
+    
+    .confirm-item{
+      @include centeralize();
+      width: 90%;
+    }
+  }
+
+  .order-confirm{
+    @include centeralize();
+
+  }
+}
+
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 767px) {
+
+  .order{
+    gap: 10px;
+    .order-image{
+
+      img{
+        width: 50px !important;
+        height: 70px !important;
+      }
+    }
+
+    .order-count-content{
+      flex-direction: column;
+      .centerly-count-content{
+        min-width: 40px;
+        min-height: 20px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 900px) {
+
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  
+  
+}
+
+/* Large devices (laptops/desktops, 1024 and up) */
+@media only screen and (min-width: 1024px) {
+
+  
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1199px) {
+
+
+}
+
+
+
+
