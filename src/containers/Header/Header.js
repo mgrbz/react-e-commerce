@@ -11,15 +11,19 @@ import './header.scss';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
+
+
 const Header = (props) => {
+  // console.log('header props', props);
 
-  console.log('header props', props);
-
+  let cardCount = 0;
   const [theme, setTheme] = useState('light');
 
   const ChangeTheme = () => {
     theme === 'light' ? setTheme('dark') : setTheme('light');
   }
+  
+  var ss = props.cards.length > 0 ? props.cards.map(card => cardCount += card.cardCount ) : 0;
 
   return (
     <div className='header'>
@@ -56,9 +60,7 @@ const Header = (props) => {
             }
           </span>
         </div>
-
       </div>
-
     </div>
   )
 }
