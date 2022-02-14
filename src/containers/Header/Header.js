@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 
 import AllInclusiveIcon from '@mui/icons-material/AllInclusive';
@@ -19,12 +19,17 @@ const Header = (props) => {
   let cardCount = 0;
   const [theme, setTheme] = useState('light');
 
+  useEffect(() => {
+    document.body.className = theme;
+  }, [theme])
+
   const ChangeTheme = () => {
     theme === 'light' ? setTheme('dark') : setTheme('light');
-    document.body.className = theme;
   }
+
   
   var ss = props.cards.length > 0 ? props.cards.map(card => cardCount += card.cardCount ) : 0;
+  
 
   return (
     <div className='header'>

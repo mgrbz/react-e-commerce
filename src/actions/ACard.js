@@ -40,3 +40,39 @@ export const DeleteToCards = () => {
   };
 };
 
+
+export const SetCardChecked = (orderId) => {
+  // console.log('DeleteToCards called');
+  return{
+      type: CardConstants.SET_CHECKED,
+      payload: orderId
+  };
+};
+
+export const IncreaseOrderCount = (orderId) => {
+  return{
+      type: CardConstants.INCREASE_ORDER_COUNT,
+      payload: orderId
+  };
+};
+
+
+export const DecreaseOrderCount = (orderId) => {
+  return{
+      type: CardConstants.DECREASE_ORDER_COUNT,
+      payload: orderId
+  };
+};
+
+
+export const RemoveOrderToCard = (orderId) => {
+  return{
+      type: CardConstants.REMOVE_ORDER_TO_CARD,
+      payload: orderId
+  };
+};
+
+
+
+
+
